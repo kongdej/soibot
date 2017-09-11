@@ -73,15 +73,15 @@ if (!is_null($events['events'])) {
 			 }
 
 
-//			 if (in_array($text, $cmd_word) || in_array($text, $inf_word)) {
+			 if (in_array($text, $cmd_word) || in_array($text, $inf_word)) {
 				// Reply to ...
 				// == Make a POST Request to Messaging API to reply to sender
 				//echo testing
-				$messages = [
-					'type' => 'text',
-					'text' => $text
-				];
-				
+//				$messages = [
+//					'type' => 'text',
+//					'text' => $text
+//				];
+
 				$url = 'https://api.line.me/v2/bot/message/reply';
 				$data = [
 					'replyToken' => $replyToken,
@@ -100,7 +100,7 @@ if (!is_null($events['events'])) {
 				curl_close($ch);
 
 				echo $result . "\r\n";
-//			}
+			}
 		}
 	}
 }
