@@ -17,8 +17,27 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// B4uild message to reply back
-			if ($text == "oo") {
-			
+			if (substr($text,0,1) == "?") {
+				$res = get();
+				$otext = json_decode($res);
+				$payload = $otext[0]->payload;
+				$datas = explode(',', $payload); // temp,ec,tub,ph
+				if (substr($text,1) == "?") {
+					$data = "Help\n?? help\n?t = Temperature\n?ec = EC\ntb = Turbidity\nph = PH";
+				}
+				else if (substr($text,1) == "t") {
+					$data = $datas[0]." C";
+				}
+				else if (substr($text,1) == "ec") {
+					$data = $datas[1] ." mS/cm";
+				}
+				else if (substr($text,1) == "tb") {
+					$data = $datas[2]." V";
+				}
+				else if (substr($text,1) == "ph") {
+					$data = $datas[3];
+				}
+
 				$messages = [
 					'type' => 'text',
 					'text' => $text
