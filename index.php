@@ -1,5 +1,5 @@
 <?php
-$access_token = 'd5RKoHxy1wwRg0B8Xzzcns5+iarUYRVn5BGaj1HvR2Zn1huy+rVr/Q8RoPdSqxrBgEmz8ync8AlpOIGCqRYiD4OjXgjjVjN/fK+zaYEYJawIGtt4lRgRVXYYxHeJCDEX5PYZVF/wTB78cGnR6XWmcAdB04t89/1O/w1cDnyilFU=';
+$access_token = '2QNzT+0OTx1/DInNMjPhLk8rbEEa9AxCsJRCOGdawUVpdbmHGeYlDIOWwcweN8lSI1jHm5sFgMfgtAXUxjhzj1YHnoXG2BzcN8RNpa7HWr1If1Iki25xYQZR8m5GhnWojTWecw1ye9pFhKDo/r2yrgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -53,7 +53,7 @@ if (!is_null($events['events'])) {
 }
 echo "OK";
 function get() {
-	 $url = "https://api.netpie.io/topic/PudzaSOI/test?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
+	 $url = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 	 $ch = curl_init($url);
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
