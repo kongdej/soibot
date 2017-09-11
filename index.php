@@ -17,11 +17,11 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// B4uild message to reply back
-			if ($text == 'oo') {
+			if ($text == "oo") {
 				put('11');
 				talkback($replyToken,'open light');				
 			}
-			if ($text == 'cc') {
+			if ($text == "cc") {
 				put('10');				
 				talkback($replyToken,'close light');				
 			}
