@@ -18,10 +18,12 @@ if (!is_null($events['events'])) {
 
 			// B4uild message to reply back
 			if ($text == 'oo') {
-				put('11');				
+				put('11');
+				talkback($replyToken,'open light');				
 			}
 			if ($text == 'cc') {
 				put('10');				
+				talkback($replyToken,'close light');				
 			}
 
 			if (substr($text,0,1) == "?") {
@@ -45,35 +47,40 @@ if (!is_null($events['events'])) {
 					$data = $datas[3];
 				}
 
-				$messages = [
-					'type' => 'text',
-					'text' => $data
-				];
+				talkback($replyToken,$data);
 
-				// Make a POST Request to Messaging API to reply to sender
-				$url = 'https://api.line.me/v2/bot/message/reply';
-				$data = [
-					'replyToken' => $replyToken,
-					'messages' => [$messages],
-				];
-				$post = json_encode($data);
-				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-				$ch = curl_init($url);
-				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-				$result = curl_exec($ch);
-				curl_close($ch);
-
-				echo $result . "\r\n";
 			}
 		}
 	}
 }
 echo "OK";
+
+function talkback ($replyToken,$msg) {
+	$messages = [
+		'type' => 'text',
+		'text' => $msg
+	];
+
+	// Make a POST Request to Messaging API to reply to sender
+	$url = 'https://api.line.me/v2/bot/message/reply';
+	$data = [
+		'replyToken' => $replyToken,
+		'messages' => [$messages],
+	];
+	$post = json_encode($data);
+	$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	$result = curl_exec($ch);
+	curl_close($ch);
+
+	echo $result . "\r\n";	
+}
 
 function get() {
 	 $url = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
