@@ -27,16 +27,16 @@ if (!is_null($events['events'])) {
 					$data = "Help\n?? help\n?t = Temperature\n?ec = EC\ntb = Turbidity\nph = PH";
 				}
 				else if (substr($text,1) == "t") {
-					$data = $data[0];
+					$data = $datas[0];
 				}
 				else if (substr($text,1) == "ec") {
-					$data = $data[1];
+					$data = $datas[1];
 				}
 				else if (substr($text,1) == "tb") {
-					$data = $data[2];
+					$data = $datas[2];
 				}
 				else if (substr($text,1) == "ph") {
-					$data = $data[3];
+					$data = $datas[3];
 				}
 
 				$messages = [
