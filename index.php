@@ -90,7 +90,7 @@ function get() {
 }
 
 function put($msg) {
-	 $url = "https://api.netpie.io/topic/PudzaSOI/cmd?retain&auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
+	 $url = "https://api.netpie.io/topic/PudzaSOI/gearname/uno?retain&auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 	 $ch = curl_init($url);
 	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
