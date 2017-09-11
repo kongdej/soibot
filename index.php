@@ -18,14 +18,30 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			
-			if ($text == "no?") {
+			if (substr($text,0,1) == "?") {
 				$res = get();
 				$otext = json_decode($res);
-				$text = $otext[0]->payload;
+				$payload = $otext[0]->payload;
+				$datas = explode(',', $payload) // temp,ec,tub,ph
+				if (substr($text,1) == "?") {
+					$data = "Help\n?? help\n?t = Temperature\n?ec = EC\ntb = Turbidity\nph = PH";
+				}
+				else if (substr($text,1) == "t") {
+					$data = $data[0];
+				}
+				else if (substr($text,1) == "ec") {
+					$data = $data[1];
+				}
+				else if (substr($text,1) == "tb") {
+					$data = $data[2];
+				}
+				else if (substr($text,1) == "ph") {
+					$data = $data[3];
+				}
 
 				$messages = [
 					'type' => 'text',
-					'text' => $text
+					'text' => $data
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
