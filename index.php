@@ -16,8 +16,14 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			// Build message to reply back
-			
+			// B4uild message to reply back
+			if ($text == 'เปิดไฟ') {
+				put('11');				
+			}
+			if ($text == 'ปิดไฟ') {
+				put('10');				
+			}
+
 			if (substr($text,0,1) == "?") {
 				$res = get();
 				$otext = json_decode($res);
@@ -68,6 +74,7 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
+
 function get() {
 	 $url = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 	 $ch = curl_init($url);
@@ -79,5 +86,20 @@ function get() {
 	 curl_setopt($ch, CURLOPT_USERPWD, "{YOUR NETPIE.IO APP KEY}:{YOUR NETPIE.IO APP SECRET}");
 	 $response = curl_exec($ch);
 	 curl_close ($ch);
+	 return $response;
+}
+
+function put($msg) {
+	 $url = "https://api.netpie.io/topic/PudzaSOI/cmd?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
+	 $ch = curl_init($url);
+	 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+	 curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);
+	 curl_setopt($ch, CURLOPT_USERPWD, "{YOUR NETPIE.IO APP KEY}:{YOUR NETPIE.IO APP SECRET}");
+	 $response = curl_exec($ch);
+	 curl_close ($ch);
+
 	 return $response;
 }
