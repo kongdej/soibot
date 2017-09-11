@@ -6,7 +6,7 @@ $url_data = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:Qgrh
 
 // Build message to reply back
 $cmd_word = array("on","off");
-$inf_word = array("t","ec","tb","ph","tbv");
+$inf_word = array("t","ec","tb","ph","tbv","??");
 
 
 // Get POST body content
@@ -64,6 +64,9 @@ if (!is_null($events['events'])) {
 					$tub = (float)$datas[2]*1000;
 					$tubformat = sprintf("%.2f mg/L", $tub);
 					$reply = $tubformat;
+				}
+				else if ($text == "??") {
+					$reply = "Help\n?? help\nt = Temperature\nec = EC\ntb = Turbidity\ntbv = Tubidity Volt\nph = PH";
 				}
 
 				$messages = [
