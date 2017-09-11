@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 				$res = get();
 				$otext = json_decode($res);
 				$payload = $otext[0]->payload;
-				$datas = explode(',', $payload) // temp,ec,tub,ph
+				$datas = explode(',', $payload); // temp,ec,tub,ph
 				if (substr($text,1) == "?") {
 					$data = "Help\n?? help\n?t = Temperature\n?ec = EC\ntb = Turbidity\nph = PH";
 				}
