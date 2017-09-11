@@ -28,6 +28,8 @@ if (!is_null($events['events'])) {
 echo "OK";
 
 function talkback ($replyToken,$msg) {
+	global $access_token;
+	
 	$messages = [
 		'type' => 'text',
 		'text' => $msg
