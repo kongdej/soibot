@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			// B4uild message to reply back
 			if ($text == "oo") {
 				$msg="hi";
-				talkback ($replyToken,$msg)
+				talkback ($replyToken,$text)
 			}
 		}
 	}
@@ -29,7 +29,7 @@ echo "OK";
 
 function talkback ($replyToken,$msg) {
 	global $access_token;
-	
+
 	$messages = [
 		'type' => 'text',
 		'text' => $msg
