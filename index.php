@@ -61,12 +61,14 @@ if (!is_null($events['events'])) {
 					$reply = $datas[3];
 				}
 				else if ($text == "tb") {
-					$tub = (float)$datas[2]*1000;
+					$X = (float)$datas[2];
+				    $tub = -1120.4*$X*$X + 5742.3*$X - 4352.9
+
 					$tubformat = sprintf("%.2f mg/L", $tub);
 					$reply = $tubformat;
 				}
 				else if ($text == "??") {
-					$reply = "Help\n?? help\nt = Temperature\nec = EC\ntb = Turbidity\ntbv = Tubidity Volt\nph = PH";
+					$reply = "Help\n?? Command list\nt = Temperature\nec = EC\ntb = Turbidity\ntbv = Tubidity Volt\nph = PH";
 				}
 
 				$messages = [
