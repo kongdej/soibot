@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 				}
 				else if ($text == "tb") {
 					$X = (float)$datas[2];
-				    $tub = -1120.4*$X*$X + 5742.3*$X - 4352.9
+				    $tub = -1120.4*$X*$X + 5742.3*$X - 4352.9;
 
 					$tubformat = sprintf("%.2f mg/L", $tub);
 					$reply = $tubformat;
