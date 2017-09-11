@@ -18,12 +18,12 @@ if (!is_null($events['events'])) {
 
 			// B4uild message to reply back
 			if ($text == "oo") {
-				put('11');
-				talkback($replyToken,'open light');				
+//				put('11');
+				talkback($replyToken,"open light");				
 			}
 			if ($text == "cc") {
-				put('10');				
-				talkback($replyToken,'close light');				
+//				put('10');				
+				talkback($replyToken,"close light");				
 			}
 
 			if (substr($text,0,1) == "?") {
