@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 
 			// B4uild message to reply back
 			if ($text == "oo") {
-				$msg;
+				$msg="hi";
 				talkback ($replyToken,$msg)
 			}
 		}
