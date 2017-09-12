@@ -33,11 +33,11 @@ if (!is_null($events['events'])) {
 					$reply = "Stop Pump";
 					$cmd = "00";
 				}
-				if ($text == "เปิดไฟ") {
+				else if ($text == "on") {
 					$reply = "Turn On Light";
 					$cmd = "11";
 				}
-				else if ($text == "ปิดไฟ") {
+				else if ($text == "off") {
 					$reply = "Turn Off Light";
 					$cmd = "10";
 				}
