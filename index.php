@@ -34,8 +34,8 @@ if (!is_null($events['events'])) {
 					$cmd = "10";
 				}
 	
-		/*
-				if ($text == "start") {
+		
+				else if ($text == "start") {
 					$reply = "Start Pump";
 					$cmd = "01";
 				}
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 					$reply = "Stop Pump";
 					$cmd = "00";
 				}
-		*/
+		
 
 				// send to test topic
 				put($url_cmd,$cmd);
