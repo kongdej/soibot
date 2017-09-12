@@ -25,12 +25,20 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			if (in_array($text, $cmd_word)) {
-				if ($text == "on") {
-					$reply = "Turn On";
+				if ($text == "start") {
+					$reply = "Star Pump";
+					$cmd = "01";
+				}
+				else if ($text == "stop") {
+					$reply = "Stop Pump";
+					$cmd = "00";
+				}
+				if ($text == "เปิดไฟ") {
+					$reply = "Turn On Light";
 					$cmd = "11";
 				}
-				else if ($text == "off") {
-					$reply = "Turn Off";
+				else if ($text == "ปิดไฟ") {
+					$reply = "Turn Off Light";
 					$cmd = "10";
 				}
 	
