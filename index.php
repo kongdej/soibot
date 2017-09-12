@@ -25,14 +25,15 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			if (in_array($text, $cmd_word)) {
-				if ($text == "on") {
+				if ($text == "start") {
 					$reply = "Turn On Light";
 					$cmd = "11";
 				}
-				else if ($text == "off") {
+				else if ($text == "stop") {
 					$reply = "Turn Off Light";
 					$cmd = "10";
 				}
+				/*
 				else if (trim($text) == "start") {
 					$reply = "Start Pump";
 					$cmd = "21";
@@ -41,7 +42,7 @@ if (!is_null($events['events'])) {
 					$reply = "Stop Pump";
 					$cmd = "20";
 				}
-		
+				*/
 
 				// send to test topic
 				put($url_cmd,$cmd);
