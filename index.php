@@ -5,7 +5,7 @@ $url_cmd  = "https://api.netpie.io/topic/PudzaSOI/relay?retain&auth=xXCgD7V2IbWl
 $url_data = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 
 // Build message to reply back
-$cmd_word = array("on","off");
+$cmd_word = array("on","off","start","stop");
 $inf_word = array("t","ec","tb","ph","tbv","??");
 
 
@@ -36,15 +36,14 @@ if (!is_null($events['events'])) {
 				
 				else if (trim($text) == "start") {
 					$reply = "Start Pump";
-					$cmd = "21";
+					$cmd = "01";
 				}
 				else if (trim($text) == "stop") {
 					$reply = "Stop Pump";
-					$cmd = "20";
+					$cmd = "00";
 				}
 
-				$reply = $text;
-
+				
 				// send to test topic
 				put($url_cmd,$cmd);
 				$messages = [
