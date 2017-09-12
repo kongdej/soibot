@@ -1,7 +1,7 @@
 <?php
 $access_token = '2QNzT+0OTx1/DInNMjPhLk8rbEEa9AxCsJRCOGdawUVpdbmHGeYlDIOWwcweN8lSI1jHm5sFgMfgtAXUxjhzj1YHnoXG2BzcN8RNpa7HWr1If1Iki25xYQZR8m5GhnWojTWecw1ye9pFhKDo/r2yrgdB04t89/1O/w1cDnyilFU=';
 
-$url_cmd  = "https://api.netpie.io/topic/PudzaSOI/cmd?retain&auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
+$url_cmd  = "https://api.netpie.io/topic/PudzaSOI/relay?retain&auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 $url_data = "https://api.netpie.io/topic/PudzaSOI/data?auth=xXCgD7V2IbWlArR:QgrhkLHJ3xbbm58B9TsVtK15d";
 
 // Build message to reply back
